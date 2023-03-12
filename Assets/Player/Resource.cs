@@ -10,4 +10,9 @@ public class Resource : MonoBehaviour //TODO: Не нравится мне эт�
     {
         Gold
     }
+
+    public override string ToString()
+    {
+        return $"Resource: {Type}; Count: {Count}";
+    }
 }

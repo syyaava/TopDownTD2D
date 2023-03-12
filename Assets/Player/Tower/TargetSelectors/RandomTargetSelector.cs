@@ -9,4 +9,9 @@ public class RandomTargetSelector : TargetSelectorBase
 
         return potentialTargets[Random.Range(0, potentialTargets.Length)];
     }
+
+    public override string ToString()
+    {
+        return "Random target selector";
+    }
 }

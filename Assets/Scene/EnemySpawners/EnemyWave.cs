@@ -29,4 +29,9 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
     {
         return enemyPrefabs.ElementAt(0);
     }
+
+    public override string ToString()
+    {
+        return $"Enemy count: {enemyCountInWave}. Delay between enemies: {delayBetweenEnemies}. Enemies: {string.Join(";", EnemyPrefabs)}";
+    }
 }

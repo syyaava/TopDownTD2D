@@ -24,6 +24,7 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
             TargetSelector = GetComponent<TargetSelectorBase>();
         if(TargetDetector == null)
             TargetDetector = GetComponent<TargetDetectorBase>();
+        PGFLogger.Log($"Tower was placed. " + this.ToString());
     }
 
     private void Update()
@@ -61,5 +62,11 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
         canShoot = false;
         yield return new WaitForSeconds(ReloadSecs);
         canShoot = true;
+    }
+
+    public override string ToString()
+    {
+        return $"Name: {gameObject.name}. Bullet: {BulletPrefab.name}. Shoot distance: {ShootDistance}. Reload: {ReloadSecs}." +
+            $"Target detector: {TargetDetector}. Target selector: {TargetSelector}.";
     }
 }

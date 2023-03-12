@@ -13,6 +13,7 @@ public class WaveEnemySpawner : EnemySpawnerBase //Изменить спавн так чтобы прот
         foreach(var wave in Waves)
         {
             yield return new WaitForSeconds(wave.waveDelaySecs);
+            PGFLogger.Log($"Start wave {wave.name}. {wave}");
             StartCoroutine(wave.Spawn(EnemySpawnPoint.position, transform));
         }
     }

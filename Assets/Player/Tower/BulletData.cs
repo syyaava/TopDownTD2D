@@ -8,6 +8,11 @@ public class BulletData : ScriptableObject
     public float RotationSpeed = 360f;
     public float MaxDistance = 20f;
 
+    public override string ToString()
+    {
+        return $"Name: {name}. Damage: {Damage}. Speed: {Speed}. RotationSpeed: {RotationSpeed}. Max distance {MaxDistance}.";
+    }
+
     public static BulletData operator+ (BulletData first, BulletData second)
     {
         var newBulletData = new BulletData()

@@ -24,16 +24,25 @@ public class PlayerResourceController : MonoBehaviour
 
     public void AddResources(params Resource[] resources)
     {
+        if(resources == null || resources.Length == 0)
+            return;
+
         foreach (var resource in resources)
         {
             var res = Resources.FirstOrDefault(x => x.Type == resource.Type);
             if(res != null)
                 res.Count += resource.Count;
         }
+
+        var str = string.Join<Resource>(" ", resources);
+        PGFLogger.Log($"Resources: {str} were added.");
     }
 
     public void RemoveResources(params Resource[] resources)
     {
+        if (resources == null || resources.Length == 0)
+            return;
+
         foreach (var resource in resources)
         {
             var res = Resources.FirstOrDefault(x => x.Type == resource.Type);
@@ -44,6 +53,9 @@ public class PlayerResourceController : MonoBehaviour
                     res.Count = 0;
             }
         }
+
+        var str = string.Join<Resource>(" ", resources);
+        PGFLogger.Log($"Resources: {str} were removed.");
     }
 
     public bool HaveResource(Resource resource)
