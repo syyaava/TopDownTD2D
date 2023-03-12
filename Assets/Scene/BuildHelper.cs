@@ -9,9 +9,8 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 {
     public Tilemap TowerBaseTilemap;
     public LayerMask TowerBaseLayerMask;
-    [HideInInspector]
-    public static Tower SelectedTowerPrefab = null;
-
+    public Tower SelectedTowerPrefab;
+    //TODO: сделать так чтбы можно было выбирать башню.
     private bool[,] cellsForBuild;
     [SerializeField]
     private Vector3 spawnOffset = new Vector3(0.5f, 0.5f);
@@ -24,7 +23,7 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
+        {            
             TryBuildTower();
         }
     }
@@ -50,7 +49,7 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
     {
         if (PlayerResourceController.Instance.RemoveResources(SelectedTowerPrefab.TowerData.Cost.ToArray()))
         {
-            var tower = Instantiate(SelectedTowerPrefab, cellCoordInt + spawnOffset, Quaternion.identity);
+            Instantiate(SelectedTowerPrefab, cellCoordInt + spawnOffset, Quaternion.identity);
             cellsForBuild[cellCoordInt.x - bounds.xMin, cellCoordInt.y - bounds.yMin] = false;
             PlayerResourceController.Instance.RemoveResources(SelectedTowerPrefab.TowerData.Cost.ToArray());
         }

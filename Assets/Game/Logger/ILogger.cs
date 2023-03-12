@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 public interface ILogger
 {
     public string FileFormat { get; }
-    public string FullPathToLog { get; }
+    public string FullPathToLogFolder { get; }
+    public string Filename { get; }
     public void Log(string message);
 }

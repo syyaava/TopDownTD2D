@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-//[CreateAssetMenu(fileName = "NewResource", menuName = "Data/Resource/Resource")]
-[Serializable]
-public class Resource //: ScriptableObject //TODO: Не нравится мне этот класс. Подумать как переделать
+
+[System.Serializable]
+public class Resource 
 {
     public ResourceType Type;
     public int Count = 1;

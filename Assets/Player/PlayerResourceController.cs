@@ -58,7 +58,7 @@ public class PlayerResourceController : MonoBehaviour
             if (res != null)
             {
                 res.Count -= resource.Count;
-                if(res.Count < 0)
+                if (res.Count < 0)
                     res.Count = 0;
             }
         }

@@ -18927,6 +18927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698f3abe931c50741ad74d1ca6a86215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resources: []
 --- !u!4 &1050383439
 Transform:
   m_ObjectHideFlags: 0
@@ -19580,5 +19581,5 @@ MonoBehaviour:
   TowerBaseLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  TowerPrefab: {fileID: 6676884121236771749, guid: 395f6ec148312f24fafcc0b59904a24b, type: 3}
+  SelectedTowerPrefab: {fileID: 6676884121236771749, guid: 395f6ec148312f24fafcc0b59904a24b, type: 3}
   spawnOffset: {x: 0.5, y: 0.5, z: 0}

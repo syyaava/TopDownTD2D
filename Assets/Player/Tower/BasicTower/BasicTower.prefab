@@ -99,9 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e835d2c7bbc871c4384c8f205ac2797f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 1785468351842092286, guid: e213e015e1d21c642a619fcd5c351fa1, type: 3}
-  ReloadSecs: 2
-  ShootDistance: 5
+  TowerData: {fileID: 11400000, guid: e7d40183f924ada4b8bfde7aa0ce9bb8, type: 2}
   TargetSelector: {fileID: 0}
   TargetDetector: {fileID: 0}
   Barret: {fileID: 6676884121236771751}

@@ -6,6 +6,6 @@ public class GameController : MonoBehaviour
 {
     void Awake()
     {
-        PGFLogger.Loggers.Add(new TxtFileLogger());
+        //PGFLogger.Loggers.Add(new TxtFileLogger());
     }
 }
