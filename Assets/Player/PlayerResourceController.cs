@@ -6,7 +6,14 @@ using UnityEngine;
 
 public class PlayerResourceController : MonoBehaviour
 {
-    public static List<Resource> Resources = new List<Resource>();
+    public static PlayerResourceController Instance { get; private set; }
+
+    public List<Resource> Resources = new List<Resource>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -16,7 +23,6 @@ public class PlayerResourceController : MonoBehaviour
             Resources.Add(new Resource()
             {
                 Type = resource,
-                Name = resource.ToString(),
                 Count = 10,
             });
         }
@@ -38,10 +44,13 @@ public class PlayerResourceController : MonoBehaviour
         PGFLogger.Log($"Resources: {str} were added.");
     }
 
-    public void RemoveResources(params Resource[] resources)
+    public bool RemoveResources(params Resource[] resources)
     {
         if (resources == null || resources.Length == 0)
-            return;
+            return false;
+
+        var haveResources = HaveResources(resources);
+        if(!haveResources) return false;
 
         foreach (var resource in resources)
         {
@@ -56,6 +65,7 @@ public class PlayerResourceController : MonoBehaviour
 
         var str = string.Join<Resource>(" ", resources);
         PGFLogger.Log($"Resources: {str} were removed.");
+        return true;
     }
 
     public bool HaveResource(Resource resource)

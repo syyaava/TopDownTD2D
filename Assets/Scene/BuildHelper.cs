@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добавив расход ресурсов. Добавить возможность постройки нескольких башен.
 {
     public Tilemap TowerBaseTilemap;
     public LayerMask TowerBaseLayerMask;
-    public Tower TowerPrefab;
+    [HideInInspector]
+    public static Tower SelectedTowerPrefab = null;
 
     private bool[,] cellsForBuild;
     [SerializeField]
@@ -23,19 +23,36 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            var cellCoord = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var cellCoordInt = TowerBaseTilemap.WorldToCell(cellCoord);
-            var bounds = TowerBaseTilemap.cellBounds;
-            if (TowerBaseTilemap.cellBounds.Contains(cellCoordInt))
+            TryBuildTower();
+        }
+    }
+
+    private void TryBuildTower()
+    {
+        if (SelectedTowerPrefab == null)
+            return;
+
+        var cellCoord = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var cellCoordInt = TowerBaseTilemap.WorldToCell(cellCoord);
+        var bounds = TowerBaseTilemap.cellBounds;
+        if (TowerBaseTilemap.cellBounds.Contains(cellCoordInt))
+        {
+            if (CanBuild(cellCoordInt - bounds.min))
             {
-                if (CanBuild(cellCoordInt - bounds.min))
-                {                    
-                    Instantiate(TowerPrefab, cellCoordInt + spawnOffset, Quaternion.identity);
-                    cellsForBuild[cellCoordInt.x - bounds.xMin, cellCoordInt.y - bounds.yMin] = false;
-                }
+                BuildTowerIfCan(cellCoordInt, bounds);
             }
+        }
+    }
+
+    private void BuildTowerIfCan(Vector3Int cellCoordInt, BoundsInt bounds)
+    {
+        if (PlayerResourceController.Instance.RemoveResources(SelectedTowerPrefab.TowerData.Cost.ToArray()))
+        {
+            var tower = Instantiate(SelectedTowerPrefab, cellCoordInt + spawnOffset, Quaternion.identity);
+            cellsForBuild[cellCoordInt.x - bounds.xMin, cellCoordInt.y - bounds.yMin] = false;
+            PlayerResourceController.Instance.RemoveResources(SelectedTowerPrefab.TowerData.Cost.ToArray());
         }
     }
 

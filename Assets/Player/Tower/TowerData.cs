@@ -11,5 +11,5 @@ public class TowerData : ScriptableObject
     public Bullet BulletPrefab;
     public float ReloadSecs = 2f;
     public float ShootDistance = 5.0f;
-    public int Cost = 10;
+    public List<Resource> Cost = new List<Resource>();
 }
