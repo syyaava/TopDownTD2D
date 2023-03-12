@@ -47,7 +47,7 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 
     private void BuildTowerIfCan(Vector3Int cellCoordInt, BoundsInt bounds)
     {
-        if (PlayerResourceController.Instance.RemoveResources(SelectedTowerPrefab.TowerData.Cost.ToArray()))
+        if (PlayerResourceController.Instance.HaveResources(SelectedTowerPrefab.TowerData.Cost.ToArray()))
         {
             Instantiate(SelectedTowerPrefab, cellCoordInt + spawnOffset, Quaternion.identity);
             cellsForBuild[cellCoordInt.x - bounds.xMin, cellCoordInt.y - bounds.yMin] = false;
