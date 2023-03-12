@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         PGFLogger.Loggers.Add(new TxtFileLogger());
     }

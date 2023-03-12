@@ -12,7 +12,7 @@ public class CircleAreaTargetDetector : TargetDetectorBase
 
     public override Transform[] DetectTargets()
     {
-        targets = Physics2D.OverlapCircleAll(transform.position, tower.ShootDistance, EnemyLayerMask).Select(x => x.transform).ToArray();
+        targets = Physics2D.OverlapCircleAll(transform.position, tower.TowerData.ShootDistance, EnemyLayerMask).Select(x => x.transform).ToArray();
         return targets;
     }
 

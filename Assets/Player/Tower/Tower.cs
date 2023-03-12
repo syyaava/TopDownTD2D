@@ -8,9 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(TargetDetectorBase))]
 public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и селектора целей.
 {
-    public Bullet BulletPrefab;
-    public float ReloadSecs = 2f;
-    public float ShootDistance = 5.0f;
+    public TowerData TowerData;
     public TargetSelectorBase TargetSelector;
     public TargetDetectorBase TargetDetector;
     public Transform Barret;
@@ -35,7 +33,7 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
         if (currentTarget != null && canShoot)
             Shoot();
 
-        if (currentTarget != null && Vector2.Distance(transform.position, currentTarget.position) > ShootDistance)
+        if (currentTarget != null && Vector2.Distance(transform.position, currentTarget.position) > TowerData.ShootDistance)
             currentTarget = null;
     }
 
@@ -46,7 +44,7 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
 
     private void Shoot()
     {
-        var bullet = Instantiate(BulletPrefab, Barret.position, Quaternion.identity, Barret);
+        var bullet = Instantiate(TowerData.BulletPrefab, Barret.position, Quaternion.identity, Barret);
         bullet.Target = currentTarget;
         StartCoroutine(Reload());
     }
@@ -54,19 +52,19 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, ShootDistance);
+        Gizmos.DrawWireSphere(transform.position, TowerData.ShootDistance);
     }
 
     private IEnumerator Reload()
     {
         canShoot = false;
-        yield return new WaitForSeconds(ReloadSecs);
+        yield return new WaitForSeconds(TowerData.ReloadSecs);
         canShoot = true;
     }
 
     public override string ToString()
     {
-        return $"Name: {gameObject.name}. Bullet: {BulletPrefab.name}. Shoot distance: {ShootDistance}. Reload: {ReloadSecs}." +
+        return $"Name: {gameObject.name}. Bullet: {TowerData.BulletPrefab.name}. Shoot distance: {TowerData.ShootDistance}. Reload: {TowerData.ReloadSecs}." +
             $"Target detector: {TargetDetector}. Target selector: {TargetSelector}.";
     }
 }
