@@ -8,15 +8,12 @@ public class CameraMovement : MonoBehaviour
     public float PanBoardThickness = 10f;
     public float ScrollSpeed = 1f;
 
-    private bool doMovement = true;
+    private bool doMovement => !GamePauseController.IsPause;
     private float minScrollSize = 2.5f;
     private float maxScrollSize = 10f;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            doMovement = !doMovement;
-
         if (!doMovement)
             return;
 
