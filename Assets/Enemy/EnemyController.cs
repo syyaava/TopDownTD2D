@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
         var playerBase = collision.GetComponent<PlayerBase>();
         if (playerBase == null)
             return;
-        Debug.Log(playerBase == null);
 
         playerBase.GetComponent<Damageble>().Hit(DamageToPlayerBase);
         var damageble = GetComponent<Damageble>();

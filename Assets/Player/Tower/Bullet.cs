@@ -8,9 +8,11 @@ public class Bullet : MonoBehaviour
     public BulletData BulletStats;
     public float SelfDestructionDelaySecs = 10f;
     public Transform Target;
+    public Animator BulletAnimator;
 
-    private Rigidbody2D rb2d;
-    private DestroyUtil destroyUtil;
+    protected Rigidbody2D rb2d;
+    protected DestroyUtil destroyUtil;
+    protected bool isAlive = true;
 
     protected void Start()
     {
@@ -21,10 +23,11 @@ public class Bullet : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        Movement();
+        if(isAlive) Movement();
+        else rb2d.velocity = Vector3.zero;
     }
 
-    private void Movement()
+    protected virtual void Movement()
     {
         if (Target != null)
         {
@@ -49,11 +52,24 @@ public class Bullet : MonoBehaviour
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
-    {        
+    {
         var damagble = collision.transform.GetComponent<Damageble>();
-        if (damagble == null) return;
+        if (damagble == null || damagble.tag == PlayerBase.PlayerBaseTag) return;
 
+        SetDamage(collision, damagble);
+    }
+
+    protected virtual void SetDamage(Collider2D collision, Damageble damagble)
+    {
         damagble.Hit(BulletStats.Damage);
+        isAlive = false;
+        StartCoroutine(DestroyOnImpact());
+    }
+
+    protected IEnumerator DestroyOnImpact()
+    {
+        BulletAnimator.SetBool("isImpact", true);
+        yield return new WaitForSeconds(0.5f);
         destroyUtil.DestroyHelper();
     }
 

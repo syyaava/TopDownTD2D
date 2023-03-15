@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class GamePauseController : MonoBehaviour
 {
     public static bool IsPause = false;
+    public static bool IsGameOver = false;
     public static UnityEvent OnPauseOn = new UnityEvent();
     public static UnityEvent OnPauseOff = new UnityEvent();
     public GameObject PauseMenu;
@@ -28,6 +29,7 @@ public class GamePauseController : MonoBehaviour
 
     private void Update()
     {
+        if (IsGameOver) return;
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);

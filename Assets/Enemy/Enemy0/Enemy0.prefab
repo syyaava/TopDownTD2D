@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMover: {fileID: 0}
+  DamageToPlayerBase: 1
 --- !u!114 &5360654154133984957
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 
     private void TryBuildTower()
     {
-        if (SelectedTowerPrefab == null)
+        if (SelectedTowerPrefab == null || GamePauseController.IsPause)
             return;
 
         var cellCoord = Camera.main.ScreenToWorldPoint(Input.mousePosition);

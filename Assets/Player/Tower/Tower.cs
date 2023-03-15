@@ -12,8 +12,10 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
     public TargetSelectorBase TargetSelector;
     public TargetDetectorBase TargetDetector;
     public Transform Barret;
+    public Animator TowerAnimator;
 
-    private Transform currentTarget;    
+    private Transform currentTarget;
+    private RotationController rotationController;
     private bool canShoot = true;
 
     private void Start()
@@ -22,6 +24,8 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
             TargetSelector = GetComponent<TargetSelectorBase>();
         if(TargetDetector == null)
             TargetDetector = GetComponent<TargetDetectorBase>();
+        if(rotationController  == null)
+            rotationController = GetComponentInChildren<RotationController>();
         PGFLogger.Log($"Tower was placed. " + this.ToString());
     }
 
@@ -30,8 +34,12 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
         if (currentTarget == null)
             SeekTarget();
 
-        if (currentTarget != null && canShoot)
-            Shoot();
+        if (currentTarget != null)
+        {
+            rotationController.LookAt(currentTarget.position);
+            if(canShoot)
+                Shoot();
+        }            
 
         if (currentTarget != null && Vector2.Distance(transform.position, currentTarget.position) > TowerData.ShootDistance)
             currentTarget = null;
@@ -44,7 +52,8 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
 
     private void Shoot()
     {
-        var bullet = Instantiate(TowerData.BulletPrefab, Barret.position, Quaternion.identity, Barret);
+        TowerAnimator.SetBool("isShoot", true);
+        var bullet = Instantiate(TowerData.BulletPrefab, Barret.position, Barret.rotation);
         bullet.Target = currentTarget;
         StartCoroutine(Reload());
     }
@@ -56,9 +65,10 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
     }
 
     private IEnumerator Reload()
-    {
+    {        
         canShoot = false;
         yield return new WaitForSeconds(TowerData.ReloadSecs);
+        TowerAnimator.SetBool("isShoot", false);
         canShoot = true;
     }
 
