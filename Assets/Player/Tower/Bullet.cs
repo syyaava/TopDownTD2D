@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         StartCoroutine(SelfDestruct());
     }
 
-    protected void FixedUpdate()
+    protected void Update()
     {
         if(isAlive) Movement();
         else rb2d.velocity = Vector3.zero;
@@ -37,8 +37,8 @@ public class Bullet : MonoBehaviour
             var rotationResult = crossProduct.z >= 0 ? -1 : 1;
             var movementVector = new Vector2(rotationResult, 1);
 
-            rb2d.velocity = (Vector2)transform.up * BulletStats.Speed * Time.fixedDeltaTime;
-            float angleZ = -movementVector.x * BulletStats.RotationSpeed * Time.fixedDeltaTime;
+            rb2d.velocity = (Vector2)transform.up * BulletStats.Speed * Time.deltaTime;
+            float angleZ = -movementVector.x * BulletStats.RotationSpeed * Time.deltaTime;
             rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0f, 0f, angleZ));
         }
         else

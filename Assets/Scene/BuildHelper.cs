@@ -9,7 +9,7 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 {
     public Tilemap TowerBaseTilemap;
     public LayerMask TowerBaseLayerMask;
-    public Tower SelectedTowerPrefab;
+    public static Tower SelectedTowerPrefab;
     //TODO: сделать так чтбы можно было выбирать башню.
     private bool[,] cellsForBuild;
     [SerializeField]
@@ -22,9 +22,14 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+        {
+            TryBuildTower();
+        }
+        else if (Input.GetMouseButtonDown(0))
         {            
             TryBuildTower();
+            SelectedTowerPrefab = null;
         }
     }
 

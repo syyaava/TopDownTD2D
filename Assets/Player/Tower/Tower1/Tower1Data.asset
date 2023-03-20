@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0713640cac32f44a64c54cee15053a, type: 3}
   m_Name: Tower1Data
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 0}
+  BulletPrefab: {fileID: 6640486014864584122, guid: b1e816c3f5d052543815db26d991bbff, type: 3}
   ReloadSecs: 5
   ShootDistance: 10
   Cost:

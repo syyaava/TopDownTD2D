@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d0713640cac32f44a64c54cee15053a, type: 3}
+  m_Name: Tower2Data
+  m_EditorClassIdentifier: 
+  BulletPrefab: {fileID: 1449322677344292440, guid: 2489681abaea5b24580d78569c7648bd, type: 3}
+  ReloadSecs: 0.5
+  ShootDistance: 5.5
+  Cost:
+  - Type: 0
+    Count: 50

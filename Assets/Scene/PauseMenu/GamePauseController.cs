@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GamePauseController : MonoBehaviour
 {
@@ -63,5 +64,10 @@ public class GamePauseController : MonoBehaviour
             OnPauseOn?.Invoke();
         else
             OnPauseOff?.Invoke();
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main menu", LoadSceneMode.Single);
     }
 }

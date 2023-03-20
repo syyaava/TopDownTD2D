@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ac91b8cc8cdb64e835661ef85555ae, type: 3}
   m_Name: Wave2
   m_EditorClassIdentifier: 
-  waveDelaySecs: 85
+  waveDelaySecs: 60
   enemyCountInWave: 5
   delayBetweenEnemies: 0.85
   EnemyPrefabs:
-  - {fileID: 8494023920811821630, guid: d4499504b605d944fac44c6df26197aa, type: 3}
+  - {fileID: 8700055366200671905, guid: ebd4d6459b6bfb94e9e0ce39710ec9d4, type: 3}
