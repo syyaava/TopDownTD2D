@@ -10,5 +10,6 @@ public class SceneController : MonoBehaviour
     {
         if(Path == null)
             Path = GetComponentInChildren<PatrolPath>();
+        Time.timeScale = 1.0f;
     }
 }

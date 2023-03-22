@@ -18,6 +18,11 @@ public class EnemyController : MonoBehaviour
         EnemyMover.Move(movementVector);
     }
 
+    public void IncreaseCountOfPlayerFrags()
+    {
+        PlayerResourceController.FragsCount++;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var playerBase = collision.GetComponent<PlayerBase>();

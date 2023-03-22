@@ -9,10 +9,12 @@ public class PlayerResourceController : MonoBehaviour
     public static PlayerResourceController Instance { get; private set; }
 
     public List<Resource> Resources = new List<Resource>();
+    public static long FragsCount = 0;
 
     private void Awake()
     {
         Instance = this;
+        FragsCount = 0;
     }
 
     void Start()

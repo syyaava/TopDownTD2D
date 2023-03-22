@@ -10,15 +10,14 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
     //Также можно сделать так, чтобы у волны был вес и туда пихало противников +-15% равных по весу в сумме.
 {
     public float waveDelaySecs = 90f;
-    [SerializeField]
-    private int enemyCountInWave = 3;
+    public int EnemyCountInWave = 3;
     [SerializeField]
     private float delayBetweenEnemies = 1.0f;
     public List<GameObject> EnemyPrefabs = new List<GameObject>();
 
-    public IEnumerator Spawn(Vector3 position, Transform parent)
+    public IEnumerator Spawn(Vector3 position, Transform parent, EnemySpawnerBase spawner)
     {
-        for (var i = 0; i < enemyCountInWave; i++)
+        for (var i = 0; i < EnemyCountInWave; i++)
         {
             Instantiate(SelectEnemy(EnemyPrefabs), position, Quaternion.identity, parent);
             yield return new WaitForSeconds(delayBetweenEnemies);
@@ -32,6 +31,6 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
 
     public override string ToString()
     {
-        return $"Enemy count: {enemyCountInWave}. Delay between enemies: {delayBetweenEnemies}. Enemies: {string.Join(";", EnemyPrefabs)}";
+        return $"Enemy count: {EnemyCountInWave}. Delay between enemies: {delayBetweenEnemies}. Enemies: {string.Join(";", EnemyPrefabs)}";
     }
 }

@@ -1,11 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaveEnemySpawner : EnemySpawnerBase //Изменить спавн так чтобы противники появлялись за экраном
-{    
+{   
     public List<EnemyWave> Waves = new List<EnemyWave>();
+    
+    private void Awake()
+    {
+        EnemyCount = Waves.Sum(x => x.EnemyCountInWave);
+    }
 
     public override IEnumerator Spawn()
     {
@@ -13,8 +19,12 @@ public class WaveEnemySpawner : EnemySpawnerBase //Изменить спавн так чтобы прот
         foreach(var wave in Waves)
         {
             yield return new WaitForSeconds(wave.waveDelaySecs);
-            //PGFLogger.Log($"Start wave {wave.name}. {wave}");
-            StartCoroutine(wave.Spawn(EnemySpawnPoint.position, transform));
+            StartCoroutine(wave.Spawn(EnemySpawnPoint.position, transform, this));
         }
+    }
+
+    public override void AddSpawnedEnemyCount(int count = 1)
+    {
+        EnemyCount += count;
     }
 }

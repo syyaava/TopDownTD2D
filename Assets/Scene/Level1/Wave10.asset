@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wave10
   m_EditorClassIdentifier: 
   waveDelaySecs: 60
-  enemyCountInWave: 30
+  EnemyCountInWave: 15
   delayBetweenEnemies: 0.5
   EnemyPrefabs:
   - {fileID: 8700055366200671905, guid: ebd4d6459b6bfb94e9e0ce39710ec9d4, type: 3}

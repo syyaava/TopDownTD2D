@@ -14,6 +14,8 @@ public class GamePauseController : MonoBehaviour
     public static UnityEvent OnPauseOn = new UnityEvent();
     public static UnityEvent OnPauseOff = new UnityEvent();
     public GameObject PauseMenu;
+    public GameObject GameOverMenu;
+    public EnemySpawnController EnemySpawnController;
 
     private void Awake()
     {
@@ -25,15 +27,28 @@ public class GamePauseController : MonoBehaviour
 
     private void Start()
     {
+        GameOverMenu.SetActive(false);
         PauseMenu.SetActive(false);
+        IsPause = false;
+        IsGameOver = false;
     }
 
     private void Update()
     {
-        if (IsGameOver) return;
+        if (IsGameOver)
+        {
+            Time.timeScale = 0;
+            GameOverMenu.SetActive(true);
+            return;
+        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
+        }
+        if(EnemySpawnController != null)
+        {
+            if(EnemySpawnController.TotalEnemyCount == PlayerResourceController.FragsCount && Time.time > 5f)
+                IsGameOver = true;
         }
     }
 
