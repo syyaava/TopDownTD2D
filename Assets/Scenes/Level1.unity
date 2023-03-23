@@ -223,6 +223,8 @@ MonoBehaviour:
   PanSpeed: 10
   PanBoardThickness: 20
   ScrollSpeed: 100
+  PlayableField: {fileID: 657128471}
+  BoundsOffsetMultiplier: 2
 --- !u!1 &657128468
 GameObject:
   m_ObjectHideFlags: 0
