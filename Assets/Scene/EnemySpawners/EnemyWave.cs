@@ -15,11 +15,15 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
     private float delayBetweenEnemies = 1.0f;
     public List<GameObject> EnemyPrefabs = new List<GameObject>();
 
-    public IEnumerator Spawn(Vector3 position, Transform parent, EnemySpawnerBase spawner)
+    public IEnumerator Spawn(Vector3 position, Transform parent, int pathNumber)
     {
         for (var i = 0; i < EnemyCountInWave; i++)
         {
-            Instantiate(SelectEnemy(EnemyPrefabs), position, Quaternion.identity, parent);
+            var enemy = Instantiate(SelectEnemy(EnemyPrefabs), position, Quaternion.identity, parent);
+            var movingComponent = enemy.GetComponent<AIWaypointMoving>();
+            if (movingComponent != null)
+                movingComponent.PathNumber = pathNumber;
+
             yield return new WaitForSeconds(delayBetweenEnemies);
         }
     }

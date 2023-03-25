@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1111491117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1111491118}
+  - component: {fileID: 1111491119}
+  m_Layer: 0
+  m_Name: TimeScaleController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1111491118
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111491117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2582287950417499039}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1111491119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111491117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97edb14be369006499562cd63bc2d044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2582287950074860274
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +200,7 @@ Transform:
   - {fileID: 2582287951238589994}
   - {fileID: 2582287951000295147}
   - {fileID: 2582287951887294947}
+  - {fileID: 1111491118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,10 +261,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemySpawnPoint: {fileID: 0}
+  EnemyCount: 0
   Waves:
-  - {fileID: 11400000, guid: 76e837e33ee42684d828e8e9062615eb, type: 2}
-  - {fileID: 11400000, guid: 29e37210dc7ee924eb9c24b0511cfb5d, type: 2}
-  - {fileID: 11400000, guid: 8fa2c3db8d5823643b3ffd88de90b07f, type: 2}
+  - {fileID: 11400000, guid: 6892d178154472140aa83cf329ac8bcf, type: 2}
+  - {fileID: 11400000, guid: 54ebe1af18b92ee45809a86dd375141b, type: 2}
+  - {fileID: 11400000, guid: 3c25db8b9f8dbd84fa1b33c1857b5714, type: 2}
+  - {fileID: 11400000, guid: 001d9e070a5bed244a8ec1fa8380dfb8, type: 2}
+  - {fileID: 11400000, guid: 8a2df8c0134319c4c98abce7de747749, type: 2}
+  - {fileID: 11400000, guid: cb8b3a09b7974bf44bf598f79a2c03b7, type: 2}
+  - {fileID: 11400000, guid: 5ecc25e55a35cc24aa4f69c46b4d4718, type: 2}
+  - {fileID: 11400000, guid: 0092a4df01252b147a289cf4c7726ea3, type: 2}
+  - {fileID: 11400000, guid: 8922ddc586502fd488d9122f1236a041, type: 2}
+  - {fileID: 11400000, guid: bfb26436b132f764cadc7aaba6d827fb, type: 2}
+  - {fileID: 11400000, guid: 408022a9854a6c0469a8cc4270f0fc3b, type: 2}
+  - {fileID: 11400000, guid: 11dbbcbe3dfe9904491468c2390fdfe2, type: 2}
+  - {fileID: 11400000, guid: b922f01960dd32c4b87612e0a00f5375, type: 2}
+  - {fileID: 11400000, guid: 97f38648378b99a45a80e745a03f79e3, type: 2}
+  - {fileID: 11400000, guid: 5b57b461dad340e4db7885cd4d88615a, type: 2}
 --- !u!1 &2582287950538704812
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +605,6 @@ MonoBehaviour:
   TowerBaseLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  SelectedTowerPrefab: {fileID: 3075934027566352494, guid: 05663c0d283cd0a4993abe2155f3ad79, type: 3}
   spawnOffset: {x: 0.5, y: 0.5, z: 0}
 --- !u!1 &2582287951238589995
 GameObject:
@@ -775,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0763f32cbc9d2648b3f2efe0087716e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalEnemyCount: 0
 --- !u!1 &2582287951902746114
 GameObject:
   m_ObjectHideFlags: 0

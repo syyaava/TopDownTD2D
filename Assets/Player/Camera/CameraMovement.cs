@@ -40,19 +40,19 @@ public class CameraMovement : MonoBehaviour
         cameraMovement = Vector2.zero;
         if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - PanBoardThickness)
         {
-            cameraMovement += Vector2.up * PanSpeed * Time.deltaTime;
+            cameraMovement += Vector2.up * PanSpeed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.S) || Input.mousePosition.y <= PanBoardThickness)
         {
-            cameraMovement += Vector2.down * PanSpeed * Time.deltaTime;
+            cameraMovement += Vector2.down * PanSpeed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.D) || Input.mousePosition.x >= Screen.width - PanBoardThickness)
         {
-            cameraMovement += Vector2.right * PanSpeed * Time.deltaTime;
+            cameraMovement += Vector2.right * PanSpeed * Time.fixedDeltaTime;
         }
         if (Input.GetKey(KeyCode.A) || Input.mousePosition.x <= PanBoardThickness)
         {
-            cameraMovement += Vector2.left * PanSpeed * Time.deltaTime;
+            cameraMovement += Vector2.left * PanSpeed * Time.fixedDeltaTime;
         }        
 
         transform.Translate(cameraMovement, Space.World);
@@ -63,6 +63,6 @@ public class CameraMovement : MonoBehaviour
     private void ChangeCameraSize()
     {
         var scroll = Input.GetAxis("Mouse ScrollWheel");
-        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - scroll * ScrollSpeed * Time.deltaTime, minScrollSize, maxScrollSize);
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - scroll * ScrollSpeed * Time.fixedDeltaTime, minScrollSize, maxScrollSize);
     }
 }

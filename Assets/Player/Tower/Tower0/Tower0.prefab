@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5605953883583755118}
   - component: {fileID: 1901999979744967779}
-  - component: {fileID: 7578853987607665986}
   - component: {fileID: 5068954206485130566}
+  - component: {fileID: 3162151708333305916}
   m_Layer: 0
   m_Name: Tower0
   m_TagString: Untagged
@@ -51,18 +51,6 @@ MonoBehaviour:
   EnemyLayerMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &7578853987607665986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5605953883583755113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 168ea40307cdf744ea38fb470ae99fbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5068954206485130566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +68,18 @@ MonoBehaviour:
   TargetDetector: {fileID: 0}
   Barret: {fileID: 5605953885281059658}
   TowerAnimator: {fileID: 2993958918993509153}
+--- !u!114 &3162151708333305916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605953883583755113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421e3aa9b9ac3a64d920b8fc796d185d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5605953885098318918
 GameObject:
   m_ObjectHideFlags: 0

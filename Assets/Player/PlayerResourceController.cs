@@ -9,6 +9,7 @@ public class PlayerResourceController : MonoBehaviour
     public static PlayerResourceController Instance { get; private set; }
 
     public List<Resource> Resources = new List<Resource>();
+    public int StartResourcesCount = 10;
     public static long FragsCount = 0;
 
     private void Awake()
@@ -25,7 +26,7 @@ public class PlayerResourceController : MonoBehaviour
             Resources.Add(new Resource()
             {
                 Type = resource,
-                Count = 10,
+                Count = StartResourcesCount,
             });
         }
     }

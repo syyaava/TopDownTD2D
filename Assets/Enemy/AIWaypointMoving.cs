@@ -8,6 +8,7 @@ public class AIWaypointMoving : MonoBehaviour
     [Range(0.1f, 1f)]
     public float ArriveDistance = 1f;
     public float WaitTime = 0.5f;
+    public int PathNumber = 0;
         
     [Range(0.01f, 1f)]
     [SerializeField]
@@ -23,7 +24,7 @@ public class AIWaypointMoving : MonoBehaviour
 
     private void Start()
     {
-        waypoints = SceneController.Path;
+        waypoints = SceneController.Paths[PathNumber];
         controller = GetComponent<EnemyController>();
     }
 

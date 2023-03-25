@@ -195,4 +195,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2914c9f498222014b9a2203feb509623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverMenu: {fileID: 0}

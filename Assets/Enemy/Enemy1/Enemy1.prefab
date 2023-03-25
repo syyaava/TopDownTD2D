@@ -234,6 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMover: {fileID: 0}
   DamageToPlayerBase: 1
+  LiveTime: 0
+  LiveTimeStep: 1
 --- !u!114 &5129314264838793933
 MonoBehaviour:
   m_ObjectHideFlags: 0

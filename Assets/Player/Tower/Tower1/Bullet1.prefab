@@ -154,7 +154,7 @@ MonoBehaviour:
   SelfDestructionDelaySecs: 10
   Target: {fileID: 0}
   BulletAnimator: {fileID: 6640486014864584121}
-  SplashRadius: 0.5
+  SplashRadius: 0.75
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 512

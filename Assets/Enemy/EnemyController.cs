@@ -6,11 +6,14 @@ public class EnemyController : MonoBehaviour
 {
     public EnemyMover EnemyMover;
     public int DamageToPlayerBase = 1;
+    public float LiveTime = 0f;
+    public float LiveTimeStep = 0.5f;
 
     private void Awake()
     {
         if (EnemyMover == null)
             EnemyMover = GetComponent<EnemyMover>();
+        StartCoroutine(AddLiveTime());
     }
 
     public void HandleMoveBody(Vector2 movementVector)
@@ -34,5 +37,14 @@ public class EnemyController : MonoBehaviour
 
         if(damageble != null)
             damageble.Hit(damageble.MaxHealth);
+    }
+
+    private IEnumerator AddLiveTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            LiveTime += LiveTimeStep;
+        }
     }
 }

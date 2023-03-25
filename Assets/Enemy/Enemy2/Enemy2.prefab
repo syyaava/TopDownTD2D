@@ -208,6 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMover: {fileID: 0}
   DamageToPlayerBase: 2
+  LiveTime: 0
+  LiveTimeStep: 0.25
 --- !u!114 &3428598963384725611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5538600c28a219c449063dee982e30cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 12
   health: 0
   OnDead:
     m_PersistentCalls:
@@ -316,4 +318,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rewards:
   - Type: 0
-    Count: 5
+    Count: 3

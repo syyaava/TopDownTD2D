@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    public static PatrolPath Path;
+    public static List<PatrolPath> Paths;
 
     private void Awake()
     {
-        if(Path == null)
-            Path = GetComponentInChildren<PatrolPath>();
+        if(Paths == null)
+            Paths = GetComponentsInChildren<PatrolPath>().ToList();
         Time.timeScale = 1.0f;
     }
 }

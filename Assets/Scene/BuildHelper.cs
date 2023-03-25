@@ -22,15 +22,17 @@ public class BuildHelper : MonoBehaviour //TODO: Переделать строительство, добав
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift))
         {
             TryBuildTower();
         }
         else if (Input.GetMouseButtonDown(0))
-        {            
+        {
             TryBuildTower();
             SelectedTowerPrefab = null;
         }
+        if (Input.GetMouseButtonDown(1))
+            SelectedTowerPrefab = null;
     }
 
     private void TryBuildTower()
