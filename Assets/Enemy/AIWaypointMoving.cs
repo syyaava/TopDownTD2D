@@ -24,7 +24,7 @@ public class AIWaypointMoving : MonoBehaviour
 
     private void Start()
     {
-        waypoints = SceneController.Paths[PathNumber];
+        waypoints = SceneController.Instance.Paths[PathNumber];
         controller = GetComponent<EnemyController>();
     }
 
@@ -45,14 +45,19 @@ public class AIWaypointMoving : MonoBehaviour
                 isInitialized = true;
             }
 
-            if (Vector2.Distance(transform.position, currentPatrolTarget) < ArriveDistance)
-            {
-                isWaiting = true;
-                StartCoroutine(WaitCoroutine());
-                return;
-            }
+            WaitOnWaypoint();
 
             Rotate(controller);
+        }
+    }
+
+    private void WaitOnWaypoint()
+    {
+        if (Vector2.Distance(transform.position, currentPatrolTarget) < ArriveDistance)
+        {
+            isWaiting = true;
+            StartCoroutine(WaitCoroutine());
+            return;
         }
     }
 

@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class SceneController : MonoBehaviour
 {
-    public static List<PatrolPath> Paths;
+    public static SceneController Instance;
+    public List<PatrolPath> Paths;
 
     private void Awake()
     {
-        if(Paths == null)
+        Instance = this;
+        if (Paths == null || Paths.Count == 0)
             Paths = GetComponentsInChildren<PatrolPath>().ToList();
         Time.timeScale = 1.0f;
     }

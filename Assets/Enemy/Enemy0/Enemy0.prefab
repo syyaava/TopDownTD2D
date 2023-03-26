@@ -113,6 +113,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMover: {fileID: 0}
   DamageToPlayerBase: 1
+  LiveTime: 0
+  LiveTimeStep: 0.5
+  ParentWave: {fileID: 0}
 --- !u!114 &5360654154133984957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ArriveDistance: 0.2
   WaitTime: 0
+  PathNumber: 0
   dotProductRotate: 0.998
   currentPatrolTarget: {x: 0, y: 0}
 --- !u!114 &5360654154133984956
@@ -162,18 +166,6 @@ MonoBehaviour:
   OnDead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5360654154133984954}
-        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
-        m_MethodName: IncreaseCountOfPlayerFrags
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8449875075231543449}
         m_TargetAssemblyTypeName: Reward, Assembly-CSharp
         m_MethodName: AddReward

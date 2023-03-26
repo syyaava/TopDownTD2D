@@ -7,6 +7,7 @@ public class EnemySpawnController : MonoBehaviour //TODO: Баг с моментальным гей
 {
     private EnemySpawnerBase[] spawners;
     public long TotalEnemyCount = 0;
+    public bool IsEndOfGame => spawners.All(x => x.IsDone);
 
     private void Start()
     {

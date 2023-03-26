@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
 
     private bool doMovement => !GamePauseController.IsPause;
     private float minScrollSize = 2.5f;
-    private float maxScrollSize = 10f;
+    private float maxScrollSize = 15f;
     private Vector2 cameraMovement;
     private Bounds movementBounds;
     // Update is called once per frame
@@ -31,7 +31,6 @@ public class CameraMovement : MonoBehaviour
             return;
 
         Movement();
-
         ChangeCameraSize();
     }
 
@@ -39,21 +38,13 @@ public class CameraMovement : MonoBehaviour
     {
         cameraMovement = Vector2.zero;
         if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - PanBoardThickness)
-        {
             cameraMovement += Vector2.up * PanSpeed * Time.fixedDeltaTime;
-        }
         if (Input.GetKey(KeyCode.S) || Input.mousePosition.y <= PanBoardThickness)
-        {
             cameraMovement += Vector2.down * PanSpeed * Time.fixedDeltaTime;
-        }
         if (Input.GetKey(KeyCode.D) || Input.mousePosition.x >= Screen.width - PanBoardThickness)
-        {
             cameraMovement += Vector2.right * PanSpeed * Time.fixedDeltaTime;
-        }
         if (Input.GetKey(KeyCode.A) || Input.mousePosition.x <= PanBoardThickness)
-        {
-            cameraMovement += Vector2.left * PanSpeed * Time.fixedDeltaTime;
-        }        
+            cameraMovement += Vector2.left * PanSpeed * Time.fixedDeltaTime;      
 
         transform.Translate(cameraMovement, Space.World);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, movementBounds.min.x, movementBounds.max.x), 

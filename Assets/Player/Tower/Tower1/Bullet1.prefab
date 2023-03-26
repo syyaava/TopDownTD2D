@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6640486014864584119}
   - component: {fileID: 6640486014864584118}
   - component: {fileID: 6640486014864584123}
+  - component: {fileID: 440297818166772298}
   - component: {fileID: 6640486014864584122}
   - component: {fileID: 6640486014864584121}
   m_Layer: 0
@@ -138,6 +139,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77e6fd9535ac5b4f9866f3af7bf3714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &440297818166772298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640486014864584116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43818c3058b8bd41825f711e39d0b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6640486014864584122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,17 +160,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6640486014864584116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3609e2e3dfcca5c44a6895312a8e44a1, type: 3}
+  m_Script: {fileID: 11500000, guid: e24159242bec46a4f91bd50ea6204b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletStats: {fileID: 11400000, guid: 57d36b8f68ccda5458c7c77be0c775e8, type: 2}
-  SelfDestructionDelaySecs: 10
+  BulletStats: {fileID: 11400000, guid: 08c632199db205247a35bd94f5853a55, type: 2}
+  SelfDestructionDelaySecs: 15
   Target: {fileID: 0}
   BulletAnimator: {fileID: 6640486014864584121}
-  SplashRadius: 0.75
-  EnemyLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!95 &6640486014864584121
 Animator:
   serializedVersion: 5

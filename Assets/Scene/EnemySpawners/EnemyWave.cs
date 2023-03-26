@@ -14,18 +14,38 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
     [SerializeField]
     private float delayBetweenEnemies = 1.0f;
     public List<GameObject> EnemyPrefabs = new List<GameObject>();
+    public bool IsDone = false;
+    [HideInInspector]
+    public List<GameObject> SpawnedEnemies = new List<GameObject>();
 
     public IEnumerator Spawn(Vector3 position, Transform parent, int pathNumber)
     {
         for (var i = 0; i < EnemyCountInWave; i++)
         {
             var enemy = Instantiate(SelectEnemy(EnemyPrefabs), position, Quaternion.identity, parent);
-            var movingComponent = enemy.GetComponent<AIWaypointMoving>();
-            if (movingComponent != null)
-                movingComponent.PathNumber = pathNumber;
+            SetPathNumberToSpawnedEnemy(pathNumber, enemy);
+
+            SetWaveLinkToSpawnedEnemy(enemy);
+
+            SpawnedEnemies.Add(enemy);
 
             yield return new WaitForSeconds(delayBetweenEnemies);
         }
+        IsDone = true;
+    }
+
+    private void SetWaveLinkToSpawnedEnemy(GameObject enemy)
+    {
+        var enemyController = enemy.GetComponent<EnemyController>();
+        if (enemyController != null)
+            enemyController.ParentWave = this;
+    }
+
+    private static void SetPathNumberToSpawnedEnemy(int pathNumber, GameObject enemy)
+    {
+        var movingComponent = enemy.GetComponent<AIWaypointMoving>();
+        if (movingComponent != null)
+            movingComponent.PathNumber = pathNumber;
     }
 
     private GameObject SelectEnemy(IEnumerable<GameObject> enemyPrefabs)
@@ -36,5 +56,10 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
     public override string ToString()
     {
         return $"Enemy count: {EnemyCountInWave}. Delay between enemies: {delayBetweenEnemies}. Enemies: {string.Join(";", EnemyPrefabs)}";
+    }
+
+    public void DeleteObjectFromSpawnedList(GameObject obj)
+    {
+        SpawnedEnemies.Remove(obj);
     }
 }

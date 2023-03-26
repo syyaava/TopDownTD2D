@@ -7,6 +7,7 @@ public class SplashBullet : Bullet
 {
     public float SplashRadius = 0.5f;
     public LayerMask EnemyLayer;
+
     protected override void SetDamage(Collider2D collision, Damageble enemy)
     {
         isAlive = false;

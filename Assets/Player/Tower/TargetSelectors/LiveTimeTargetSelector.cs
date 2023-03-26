@@ -12,6 +12,7 @@ public class LiveTimeTargetSelector : TargetSelectorBase
         var enemyControllers = targets.Select(x => x.GetComponent<EnemyController>());
         Transform maxLiveTimeTarget = null;
         var maxLiveTime = float.MinValue;
+
         foreach(var controller in enemyControllers)
         {
             if (maxLiveTime < controller.LiveTime)

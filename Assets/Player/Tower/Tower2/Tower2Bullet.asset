@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed75a550092e0bb41ad836eef18c5eff, type: 3}
-  m_Name: Tower2BulletData
+  m_Script: {fileID: 11500000, guid: c11ed1c177498e64682df2689c16a7e1, type: 3}
+  m_Name: Tower2Bullet
   m_EditorClassIdentifier: 
   Damage: 1
-  Speed: 250
+  Speed: 175
   RotationSpeed: 720
-  MaxDistance: 20
+  MaxDistance: 35

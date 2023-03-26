@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySpawnPoint: {fileID: 0}
   EnemyCount: 0
-  PathNumber: 0
+  PathNumber: 2
   Waves:
   - {fileID: 11400000, guid: 776b0e374c58fdd4f9161ec389250560, type: 2}
   - {fileID: 11400000, guid: 4d51f23ee805bb94085ae2e8dc58ba7e, type: 2}
@@ -15440,7 +15440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySpawnPoint: {fileID: 0}
   EnemyCount: 0
-  PathNumber: 0
+  PathNumber: 1
   Waves:
   - {fileID: 11400000, guid: a02aa261e12cc584a9709a371bdc8fbf, type: 2}
   - {fileID: 11400000, guid: 5786c25d418a8c44e916e029866f34e2, type: 2}
@@ -20283,7 +20283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913543789851261522, guid: 398ceff8e9dd05f4db5794975d82702f, type: 3}
       propertyPath: StartResourcesCount
-      value: 30
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 913543789851261523, guid: 398ceff8e9dd05f4db5794975d82702f, type: 3}
       propertyPath: m_RootOrder
@@ -20666,6 +20666,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2582287951887294947, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
   m_PrefabInstance: {fileID: 2582287951213019915}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2582287951213019920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1111491119, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+  m_PrefabInstance: {fileID: 2582287951213019915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97edb14be369006499562cd63bc2d044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4087329507243148494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20673,6 +20684,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 650237828, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: TimeScaleController
+      value: 
+      objectReference: {fileID: 2582287951213019920}
     - target: {fileID: 4087329505904299257, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
       propertyPath: EnemySpawnController
       value: 

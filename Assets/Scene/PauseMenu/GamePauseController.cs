@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -15,6 +17,7 @@ public class GamePauseController : MonoBehaviour
     public static UnityEvent OnPauseOff = new UnityEvent();
     public GameObject PauseMenu;
     public GameObject GameOverMenu;
+    public TMP_Text GameOverText;
     public EnemySpawnController EnemySpawnController;
 
     private void Awake()
@@ -31,6 +34,7 @@ public class GamePauseController : MonoBehaviour
         PauseMenu.SetActive(false);
         IsPause = false;
         IsGameOver = false;
+        StartCoroutine(CheckOnEndGame());
     }
 
     private void Update()
@@ -44,11 +48,6 @@ public class GamePauseController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SetPause(!IsPause);
-        }
-        if(EnemySpawnController != null)
-        {
-            if(EnemySpawnController.TotalEnemyCount == PlayerResourceController.FragsCount && Time.time > 5f)
-                IsGameOver = true;
         }
     }
 
@@ -84,5 +83,16 @@ public class GamePauseController : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("Main menu", LoadSceneMode.Single);
+    }
+
+    private IEnumerator CheckOnEndGame()
+    {
+        yield return new WaitForSeconds(100f);
+        while (!EnemySpawnController.IsEndOfGame)
+        {
+            yield return new WaitForSeconds(1.5f);
+        }
+        IsGameOver = true;
+        GameOverText.text = "You win!";
     }
 }

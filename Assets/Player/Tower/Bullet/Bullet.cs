@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+[RequireComponent(typeof(BulletMover))]
+public class Bullet : MonoBehaviour //TODO: Перенести нанесение урона в отдельный класс
 {
     public BulletData BulletStats;
     public float SelfDestructionDelaySecs = 10f;
@@ -13,36 +14,21 @@ public class Bullet : MonoBehaviour
     protected Rigidbody2D rb2d;
     protected DestroyUtil destroyUtil;
     protected bool isAlive = true;
+    protected BulletMover bulletMover;
 
     protected void Start()
     {
         destroyUtil = GetComponent<DestroyUtil>();
         rb2d = GetComponent<Rigidbody2D>();
+        bulletMover = GetComponent<BulletMover>();
+        bulletMover.Initialize(Target, rb2d, BulletStats);
         StartCoroutine(SelfDestruct());
     }
 
     protected void Update()
     {
-        if(isAlive) Movement();
+        if(isAlive) bulletMover.Movement();
         else rb2d.velocity = Vector3.zero;
-    }
-
-    protected virtual void Movement()
-    {
-        if (Target != null)
-        {
-            var directionToGo = (Vector2)Target.position - (Vector2)(gameObject.transform.position);
-
-            var crossProduct = Vector3.Cross(gameObject.transform.up, directionToGo.normalized);
-            var rotationResult = crossProduct.z >= 0 ? -1 : 1;
-            var movementVector = new Vector2(rotationResult, 1);
-
-            rb2d.velocity = (Vector2)transform.up * BulletStats.Speed * Time.deltaTime;
-            float angleZ = -movementVector.x * BulletStats.RotationSpeed * Time.deltaTime;
-            rb2d.MoveRotation(transform.rotation * Quaternion.Euler(0f, 0f, angleZ));
-        }
-        else
-            Destroy(gameObject);
     }
 
     protected IEnumerator SelfDestruct()

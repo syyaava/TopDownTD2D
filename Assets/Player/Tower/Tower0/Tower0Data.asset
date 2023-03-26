@@ -17,4 +17,4 @@ MonoBehaviour:
   ShootDistance: 5
   Cost:
   - Type: 0
-    Count: 20
+    Count: 30
