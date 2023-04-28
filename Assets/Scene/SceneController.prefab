@@ -201,6 +201,7 @@ Transform:
   - {fileID: 2582287951000295147}
   - {fileID: 2582287951887294947}
   - {fileID: 1111491118}
+  - {fileID: 7928093316207883885}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ae542086da981347b442848a10be2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Paths: []
 --- !u!1 &2582287950495082363
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemySpawnPoint: {fileID: 0}
   EnemyCount: 0
+  PathNumber: 0
   Waves:
   - {fileID: 11400000, guid: 6892d178154472140aa83cf329ac8bcf, type: 2}
   - {fileID: 11400000, guid: 54ebe1af18b92ee45809a86dd375141b, type: 2}
@@ -957,3 +960,48 @@ Transform:
   m_Father: {fileID: 2582287951238589994}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6532992929562918783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7928093316207883885}
+  - component: {fileID: 8021659353114514913}
+  m_Layer: 0
+  m_Name: TowerUpgradeHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7928093316207883885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532992929562918783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2582287950417499039}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8021659353114514913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6532992929562918783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed705b9f15cf3d4295f5668323e343d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeMenu: {fileID: 0}

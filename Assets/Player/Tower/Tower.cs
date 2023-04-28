@@ -26,7 +26,6 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
             TargetDetector = GetComponent<TargetDetectorBase>();
         if(rotationController  == null)
             rotationController = GetComponentInChildren<RotationController>();
-        PGFLogger.Log($"Tower was placed. " + this.ToString());
     }
 
     private void Update()
@@ -53,7 +52,7 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
     private void Shoot()
     {
         TowerAnimator.SetBool("isShoot", true);
-        var bullet = Instantiate(TowerData.BulletPrefab, Barret.position, Barret.rotation);
+        var bullet = Instantiate(TowerData.BulletPrefabs[TowerData.Level - 1], Barret.position, Barret.rotation);
         bullet.Target = currentTarget;
         StartCoroutine(Reload());
     }
@@ -74,7 +73,8 @@ public class Tower : MonoBehaviour //TODO: Пересмотреть получение детектора и се
 
     public override string ToString()
     {
-        return $"Name: {gameObject.name}. Bullet: {TowerData.BulletPrefab.name}. Shoot distance: {TowerData.ShootDistance}. Reload: {TowerData.ReloadSecs}." +
+        return $"Name: {gameObject.name}. Bullet: {TowerData.BulletPrefabs[TowerData.Level - 1].name}. " +
+            $"Shoot distance: {TowerData.ShootDistance}. Reload: {TowerData.ReloadSecs}." +
             $"Target detector: {TargetDetector}. Target selector: {TargetSelector}.";
     }
 }

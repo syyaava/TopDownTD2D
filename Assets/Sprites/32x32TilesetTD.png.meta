@@ -341,7 +341,7 @@ TextureImporter:
         width: 64
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,6 +349,48 @@ TextureImporter:
       bones: []
       spriteID: 94973f6e9cb46324894ed25c65a381f0
       internalID: -1460102382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradeButton
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6bbf30a8198674b8a997b1b49beda4
+      internalID: 1494983468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CloseButton
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c203f80cf8377c44a78a96384ef8909
+      internalID: -1242731938
       vertices: []
       indices: 
       edges: []
@@ -367,6 +409,8 @@ TextureImporter:
       Button0: 1826340414
       Road3: 315171868
       Road1: -1606135836
+      UpgradeButton: 1494983468
+      CloseButton: -1242731938
       Button1: 595836760
       TowerCell: -1505332794
       Base: -1053753362

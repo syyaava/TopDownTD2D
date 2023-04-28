@@ -20,7 +20,7 @@ public class BulletData : ScriptableObject
             Damage = first.Damage + second.Damage,
             Speed = first.Speed + second.Speed,
             RotationSpeed = first.RotationSpeed + second.RotationSpeed,
-            MaxDistance = first.MaxDistance + second.MaxDistance
+            MaxDistance = first.MaxDistance
         };
         return newBulletData;
     }
@@ -32,7 +32,7 @@ public class BulletData : ScriptableObject
             Damage = first.Damage - second.Damage,
             Speed = first.Speed - second.Speed,
             RotationSpeed = first.RotationSpeed - second.RotationSpeed,
-            MaxDistance = first.MaxDistance - second.MaxDistance
+            MaxDistance = first.MaxDistance
         };
         return newBulletData;
     }
@@ -44,7 +44,7 @@ public class BulletData : ScriptableObject
             Damage = first.Damage * second.Damage,
             Speed = first.Speed * second.Speed,
             RotationSpeed = first.RotationSpeed * second.RotationSpeed,
-            MaxDistance = first.MaxDistance * second.MaxDistance
+            MaxDistance = first.MaxDistance
         };
         return newBulletData;
     }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1901999979744967779}
   - component: {fileID: 5068954206485130566}
   - component: {fileID: 3162151708333305916}
+  - component: {fileID: 3277895313362839623}
   m_Layer: 0
   m_Name: Tower0
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerData: {fileID: 11400000, guid: c6b6bd0f36976fa458390c7069347dc4, type: 2}
+  UpgradeInfo: {fileID: 11400000, guid: 3964b635ef764f744bc2a5ad26810dd0, type: 2}
   TargetSelector: {fileID: 0}
   TargetDetector: {fileID: 0}
   Barret: {fileID: 5605953885281059658}
@@ -80,6 +82,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421e3aa9b9ac3a64d920b8fc796d185d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &3277895313362839623
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5605953883583755113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &5605953885098318918
 GameObject:
   m_ObjectHideFlags: 0

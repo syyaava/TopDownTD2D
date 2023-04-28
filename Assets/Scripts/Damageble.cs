@@ -9,24 +9,25 @@ public class Damageble : MonoBehaviour
     [SerializeField]
     private int health;
     public UnityEvent OnDead;
-    public UnityEvent<float> OnHealthChange;
+    public UnityEvent<float> OnHealthChange = new UnityEvent<float>();
     public UnityEvent OnHit;
     public UnityEvent OnHeal;
 
     
     public int Health
     {
-        get { return health; } 
+        get { return health; }
         set
         {
             health = value;
-            OnHealthChange?.Invoke((Health * 1.0f) / MaxHealth);
+            OnHealthChange?.Invoke(Health);
         }
     }
 
     private void Start()
     {
         Health = MaxHealth;
+        OnHealthChange?.Invoke(Health);
     }
 
     public void Hit(int damagePoints)

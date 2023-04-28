@@ -12,9 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0713640cac32f44a64c54cee15053a, type: 3}
   m_Name: Tower2Data
   m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 1449322677344292440, guid: 2489681abaea5b24580d78569c7648bd, type: 3}
+  Level: 1
+  BulletPrefabs:
+  - {fileID: 1449322677344292440, guid: 2489681abaea5b24580d78569c7648bd, type: 3}
+  - {fileID: 1449322677344292440, guid: abce797a862fbb046af910812c8412bb, type: 3}
+  - {fileID: 1449322677344292440, guid: e12ec25c3a6758c49ab729f1151bb901, type: 3}
+  - {fileID: 1449322677344292440, guid: 2502ebb3a538976448b13674f40b4bcf, type: 3}
   ReloadSecs: 0.5
   ShootDistance: 5.5
   Cost:
   - Type: 0
     Count: 150
+  UpgradeCosts:
+  - Type: 0
+    Count: 150
+  - Type: 0
+    Count: 175
+  - Type: 0
+    Count: 200
+  - Type: 0
+    Count: 225
+  - Type: 0
+    Count: 250

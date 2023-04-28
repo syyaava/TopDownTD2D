@@ -26,7 +26,6 @@ public class EnemyWave : ScriptableObject //TODO: Добавить возмож�
             SetPathNumberToSpawnedEnemy(pathNumber, enemy);
 
             SetWaveLinkToSpawnedEnemy(enemy);
-
             SpawnedEnemies.Add(enemy);
 
             yield return new WaitForSeconds(delayBetweenEnemies);

@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletStats: {fileID: 11400000, guid: 0c0203a9ccb77df4e95577f74ca65804, type: 2}
+  DefaultBulletStats: {fileID: 11400000, guid: 0c0203a9ccb77df4e95577f74ca65804, type: 2}
   SelfDestructionDelaySecs: 10
   Target: {fileID: 0}
   BulletAnimator: {fileID: 6305817335446612067}

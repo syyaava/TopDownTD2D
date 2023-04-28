@@ -19161,6 +19161,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &834256714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8021659353114514913, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+  m_PrefabInstance: {fileID: 2582287951213019915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed705b9f15cf3d4295f5668323e343d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017832770
 GameObject:
   m_ObjectHideFlags: 0
@@ -20270,6 +20281,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 259cc74242caa634c9de19226af7430d, type: 3}
+--- !u!114 &2131479151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7982364980890814151, guid: 259cc74242caa634c9de19226af7430d, type: 3}
+  m_PrefabInstance: {fileID: 2117865183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5538600c28a219c449063dee982e30cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &913543790076276252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20638,6 +20660,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -15.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6532992929562918783, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928093316207883885, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021659353114514913, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021659353114514913, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+      propertyPath: UpgradeMenu
+      value: 
+      objectReference: {fileID: 4087329507243148495}
+    - target: {fileID: 8021659353114514913, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+      propertyPath: LayerMask.m_Bits
+      value: 1441
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
 --- !u!114 &2582287951213019916 stripped
@@ -20684,10 +20726,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 209785779, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: PlayerBase
+      value: 
+      objectReference: {fileID: 2131479151}
     - target: {fileID: 650237828, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
       propertyPath: TimeScaleController
       value: 
       objectReference: {fileID: 2582287951213019920}
+    - target: {fileID: 2047797017, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047797017, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1142543480016703384, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4087329505904299257, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
       propertyPath: EnemySpawnController
       value: 
@@ -20780,5 +20838,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 834256714}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerUpgrade, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8728612575545597921, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_Angle
+      value: -164.72624
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+--- !u!114 &4087329507243148495 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2304815100612762070, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+  m_PrefabInstance: {fileID: 4087329507243148494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e100c8b448fc64bb89364501235bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

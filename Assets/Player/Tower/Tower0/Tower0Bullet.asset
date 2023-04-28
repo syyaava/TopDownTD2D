@@ -16,3 +16,5 @@ MonoBehaviour:
   Speed: 150
   RotationSpeed: 720
   MaxDistance: 20
+  MaxDamage: 6
+  MaxSpeed: 450

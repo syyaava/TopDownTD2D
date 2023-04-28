@@ -19214,6 +19214,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97edb14be369006499562cd63bc2d044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2582287951213019919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8021659353114514913, guid: 6fc3db00d3b2ad047a6e51a1acafebb7, type: 3}
+  m_PrefabInstance: {fileID: 2582287951213019915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed705b9f15cf3d4295f5668323e343d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4087329507243148494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19225,6 +19236,14 @@ PrefabInstance:
       propertyPath: TimeScaleController
       value: 
       objectReference: {fileID: 2582287951213019918}
+    - target: {fileID: 2047797017, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047797017, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4087329505904299257, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
       propertyPath: EnemySpawnController
       value: 
@@ -19316,6 +19335,22 @@ PrefabInstance:
     - target: {fileID: 4087329506413289757, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2582287951213019919}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerUpgrade, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927703684747541066, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836ca7c3eec90f8498d2d6ad6443af6b, type: 3}
